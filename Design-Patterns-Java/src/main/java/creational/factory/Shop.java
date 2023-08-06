@@ -11,7 +11,17 @@ public class Shop {
         while(true) {
             String materialType = s.nextLine();
             if(materialType=="1")  System.exit(0);
+            /**
+             * here instead of directly using the bottle classed to instantiate object
+             * we use BottleFactory which creates us the bottle type.
+             * so the instantiation of  objects is hidden from client.
+             * 
+             * because of the factory pattern we have achieved abstraction and also our core 
+             * bottle classes are loosely coupled without depending on the client class.
+             */
+            
             BottleFactory factory = new BottleFactory();
+            
             factory.getBottle(materialType).typeOfMaterial();
             System.out.println("\n\n\n\nDo you still want to stop ?\n then provide material \nif you want to finish give 1.");
         }
