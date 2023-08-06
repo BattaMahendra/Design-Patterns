@@ -4,7 +4,8 @@ public class BottleFactory {
     public Bottle getBottle(String typeOfMaterial){
 
         if(typeOfMaterial==null|| typeOfMaterial.isEmpty()) {
-            throw new IllegalArgumentException("please give proper material");
+            System.out.println("please give proper material");
+            return  null;
         }
         typeOfMaterial=typeOfMaterial.toLowerCase();
 
@@ -12,7 +13,9 @@ public class BottleFactory {
             case "steel": return new SteelBottle();
             case "plastic": return new PlasticBottle();
             case "mud": return new MudBottle();
-            default: throw new IllegalArgumentException("invalid material");
+            default:
+                System.out.println("invalid bottle material");
         }
+        return null;
     }
 }
