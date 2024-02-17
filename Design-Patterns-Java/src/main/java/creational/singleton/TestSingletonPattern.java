@@ -29,13 +29,20 @@ public class TestSingletonPattern extends Thread{
 			// do actual work here...
 			//creation of singleton object 
 			//three threads access it at same time
-			LazySingleton obj1 = LazySingleton.getInstance();
-			System.out.println("hashcode of obj1 : "+ obj1.hashCode());
+			callingLazyInstance();
 
 		} catch (InterruptedException e) {
 			// handle exception
 		}
 
+	}
+
+	/**
+	 * 
+	 */
+	private void callingLazyInstance() {
+		LazySingleton obj1 = LazySingleton.getInstance();
+		System.out.println("hashcode of obj1 : "+ obj1.hashCode());
 	}
 	public static void main(String[] args) throws InterruptedException {
 		//intializeLazySingleton();
@@ -61,6 +68,7 @@ public class TestSingletonPattern extends Thread{
 		t1.start();
 		t2.start();
 		t3.start();
+		//run method is called automatically when we call start() method for a thread
 		//now all the threads are started and we blocked them purposefully ( go to run method)
 
 		System.out.println("-----------------------------------------------");
