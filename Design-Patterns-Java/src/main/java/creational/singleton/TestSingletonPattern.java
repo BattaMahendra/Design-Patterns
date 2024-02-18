@@ -119,8 +119,8 @@ public class TestSingletonPattern extends Thread {
             //creation of singleton object
             //three threads access it at same time
             callingLazyInstance();
-            getThreadSafeSingletonInstance();
-            testEnumSingletonDesign();
+//            getThreadSafeSingletonInstance();
+//            testEnumSingletonDesign();
 
         } catch (InterruptedException e) {
             // handle exception

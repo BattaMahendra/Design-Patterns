@@ -14,3 +14,9 @@ public class SimpleSingleton {
 	}
 
 }
+
+
+// our class should let us create only one obj
+// and that should be used everywhere
+
+// we want our obj to be created only when we need it.

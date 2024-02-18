@@ -7,15 +7,36 @@ public class ThreadSafeSingleton {
     private ThreadSafeSingleton(){
         
     }
-    
+
+    /**
+     * double check locking principle
+     * @return
+     */
     public static ThreadSafeSingleton getInstance(){
+
         if(threadSafeSingleton == null){
+
             synchronized (ThreadSafeSingleton.class){
+
                 if(threadSafeSingleton == null){
                     threadSafeSingleton = new ThreadSafeSingleton();
                 }
             }
         }
+        return threadSafeSingleton;
+    }
+
+    /**
+     * this method is accessible by only thread
+     */
+    public static synchronized ThreadSafeSingleton getInstance2(){
+
+
+                if(threadSafeSingleton == null){
+                    threadSafeSingleton = new ThreadSafeSingleton();
+                }
+
+
         return threadSafeSingleton;
     }
     

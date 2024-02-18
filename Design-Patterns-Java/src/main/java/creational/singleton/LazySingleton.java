@@ -7,7 +7,12 @@ public class LazySingleton {
 	private LazySingleton() {
 		
 	}
-	
+
+	/**
+	 *
+	 * this is lazy instantiation
+	 * object is created only when getInstance() method is called
+	 */
 	public  static LazySingleton getInstance() {
 		
 		
