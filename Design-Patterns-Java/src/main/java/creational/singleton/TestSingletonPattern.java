@@ -40,7 +40,11 @@ public class TestSingletonPattern extends Thread {
     }
 
     /**
-     * @throws InterruptedException
+     * creating multithread mechanism to make two threads running at same time
+     * although two threads can not be started at the same time
+     * we start both of them at different times and block them for while and
+     * resume them at the same time by using CountDownLatch object
+     * so this gives us two threads running practically at the same time
      */
     private static void multipleThreadsAccessingSingleton() throws InterruptedException {
         //creating count down with 1
@@ -49,10 +53,9 @@ public class TestSingletonPattern extends Thread {
         //creating multiple threads at once and starting them individually
         TestSingletonPattern t1 = new TestSingletonPattern("Thread 1", latch);
         TestSingletonPattern t2 = new TestSingletonPattern("Thread 2", latch);
-        TestSingletonPattern t3 = new TestSingletonPattern("Thread 3", latch);
         t1.start();
         t2.start();
-      //  t3.start();
+
         //run method is called automatically when we call start() method for a thread
         //now all the threads are started and we blocked them purposefully ( go to run method)
 
@@ -79,7 +82,6 @@ public class TestSingletonPattern extends Thread {
         LazySingleton obj1 = LazySingleton.getInstance();
         LazySingleton obj2 = LazySingleton.getInstance();
         LazySingleton obj3 = LazySingleton.getInstance();
-        LazySingleton obj4 = LazySingleton.getInstance();
         System.out.println("hashcode of obj1 : " + obj1.hashCode());
         System.out.println("hashcode of obj2 : " + obj2.hashCode());
         System.out.println("hashcode of obj3 : " + obj3.hashCode());
@@ -98,6 +100,11 @@ public class TestSingletonPattern extends Thread {
         System.out.println("hashcode of obj3 : " + obj3.hashCode());
     }
 
+
+    /**
+     * The moment a thread is called with start() method , this run() method is triggered
+     * it is triggered for every thread
+     */
     @Override
     public void run() {
         try {
@@ -111,8 +118,8 @@ public class TestSingletonPattern extends Thread {
             // do actual work here...
             //creation of singleton object
             //three threads access it at same time
-//            callingLazyInstance();
-//            getThreadSafeSingletonInstance();
+            callingLazyInstance();
+            getThreadSafeSingletonInstance();
             testEnumSingletonDesign();
 
         } catch (InterruptedException e) {
