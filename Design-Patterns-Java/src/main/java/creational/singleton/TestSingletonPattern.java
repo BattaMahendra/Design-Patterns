@@ -26,6 +26,12 @@ public class TestSingletonPattern extends Thread {
 
 
 
+
+    }
+
+    private static void testEnumSingletonDesign() {
+        EnumSingleton enumSingleton = EnumSingleton.ENUM_SINGLETON;
+        System.out.println("The hash code  of the enumSingleton object is : "+ enumSingleton.hashCode());
     }
 
     private static void getThreadSafeSingletonInstance() {
@@ -105,8 +111,9 @@ public class TestSingletonPattern extends Thread {
             // do actual work here...
             //creation of singleton object
             //three threads access it at same time
-           // callingLazyInstance();
-            getThreadSafeSingletonInstance();
+//            callingLazyInstance();
+//            getThreadSafeSingletonInstance();
+            testEnumSingletonDesign();
 
         } catch (InterruptedException e) {
             // handle exception
