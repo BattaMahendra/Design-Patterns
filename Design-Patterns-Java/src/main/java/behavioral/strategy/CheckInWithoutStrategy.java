@@ -18,6 +18,10 @@ public class CheckInWithoutStrategy {
      * directly violates the OPEN-CLOSED principle
      *
      * The solution is we should decouple the CheckInTypes logic  from this method
+     * 
+     * which mean even if we add more authentication methods in future the checkIn method
+     * should not be modified. It should be compatible enough to handle any newly added
+     * strategies(for eg: ManagerRegularisation)
      *
      *
      * @param credentials
