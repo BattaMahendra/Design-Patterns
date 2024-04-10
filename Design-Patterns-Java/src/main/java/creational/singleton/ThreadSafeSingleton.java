@@ -2,7 +2,7 @@ package creational.singleton;
 
 public class ThreadSafeSingleton {
     
-    private static ThreadSafeSingleton threadSafeSingleton;
+    private static ThreadSafeSingleton threadSafeSingleton = null;
     
     private ThreadSafeSingleton(){
         

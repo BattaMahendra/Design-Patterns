@@ -20,11 +20,12 @@ public class TestSingletonPattern extends Thread {
     public static void main(String[] args) throws InterruptedException {
         //intializeLazySingleton();
 
-        simpleSingletonTesting();
-
+      //  simpleSingletonTesting();
+    	
+    	
+    		
         multipleThreadsAccessingSingleton();
-
-
+    	
 
 
     }
@@ -60,7 +61,7 @@ public class TestSingletonPattern extends Thread {
         //now all the threads are started and we blocked them purposefully ( go to run method)
 
         System.out.println("-----------------------------------------------");
-        System.out.println(" Now release the latch:");
+        System.out.println(" Now release the latch: with thread");
         System.out.println("-----------------------------------------------");
         //counting down the latch from 1 to 0
         latch.countDown();
@@ -115,11 +116,12 @@ public class TestSingletonPattern extends Thread {
             //which means even though all threads are not created at once, but they are blocked and released
             //at same time which makes every thread to act simultaneously
             System.out.printf("[ %s ] starts at: %s\n", getName(), Instant.now());
+           
             // do actual work here...
             //creation of singleton object
             //three threads access it at same time
-            callingLazyInstance();
-//            getThreadSafeSingletonInstance();
+            //callingLazyInstance();
+            getThreadSafeSingletonInstance();
 //            testEnumSingletonDesign();
 
         } catch (InterruptedException e) {
@@ -129,9 +131,11 @@ public class TestSingletonPattern extends Thread {
     }
 
     /**
+     * @throws InterruptedException 
      *
      */
     private void callingLazyInstance() {
+    	
         LazySingleton obj1 = LazySingleton.getInstance();
         System.out.println("hashcode of obj1 : " + obj1.hashCode());
     }
