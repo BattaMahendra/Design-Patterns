@@ -1,9 +1,9 @@
 package creational.prototype;
 
-public abstract class Computer {
+public abstract class ComputerFactory {
     String company;
     String model;
     double cost;
 
-    public abstract Computer copy();
+    public abstract ComputerFactory copy();
 }

@@ -1,6 +1,6 @@
 package creational.prototype;
 
-public class Laptop extends Computer{
+public class Laptop extends ComputerFactory {
 
 
     public Laptop(){}
@@ -10,8 +10,9 @@ public class Laptop extends Computer{
         this.model=model;
     }
     @Override
-    public Computer copy() {
-        return this;
+    public  ComputerFactory copy() {
+
+        return new Laptop(this.company,this.model, this.cost);
     }
 
     @Override

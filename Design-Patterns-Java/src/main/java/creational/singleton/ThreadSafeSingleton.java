@@ -9,7 +9,7 @@ public class ThreadSafeSingleton {
     }
 
     /**
-     * double check locking principle
+     * double check locking principle with synchronized block
      * @return
      */
     public static ThreadSafeSingleton getInstance(){
