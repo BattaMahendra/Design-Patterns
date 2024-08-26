@@ -16,7 +16,7 @@ public class LazySingleton {
 	public  static LazySingleton getInstance() {
 		
 		
-		if(lazyInstance == null) {
+		if(lazyInstance == null) {  // if two threads get here at the same time then it breaks
 			lazyInstance= new LazySingleton();
 			return lazyInstance;
 		}

@@ -9,7 +9,16 @@ public class SimpleSingleton {
 	private SimpleSingleton() {
 		
 	}
-	
+
+	/*
+	* Here we are using eager singleton design pattern
+	* Here the instance is created when the class loads
+	* So this is thread safe
+	* Only problem is if the creating instance is resource intensive then we have some disadvantages
+	* 1. We are creating the instance before the application starts up and we may not use the instance
+	* 2. If we don't use the instance then it goes as waste
+	*
+	* Creating instance when it is only necessary then it is called lazy initialization (which has its own set of problems)*/
 	public static SimpleSingleton getInstance() {
 		return eagerSingletonInstance;
 	}

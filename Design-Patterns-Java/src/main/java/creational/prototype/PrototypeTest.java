@@ -24,3 +24,10 @@ public class PrototypeTest {
                 .collect(Collectors.toList());
     }
 }
+
+/*
+* When to Use:
+When the cost of creating a new object is high (e.g., heavy initialization, expensive resources).
+When you need to create many similar objects dynamically.
+When you want to reduce the number of classes in an application by reusing existing objects through cloning.
+* */

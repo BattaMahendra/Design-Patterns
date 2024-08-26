@@ -22,8 +22,12 @@ public class Shop {
             
             BottleFactory factory = new BottleFactory();
             
-            factory.getBottle(materialType).typeOfMaterial();
-            System.out.println("\n\n\n\nDo you still want to stop ?\n then provide material \nif you want to finish give 1.");
+            Bottle bottle = factory.getBottle(materialType);
+            //using if block in order to avoid null pointer exception when null is returned from above line
+            if(bottle != null){
+                bottle.typeOfMaterial();
+            }
+            System.out.println("\n\n\n=====================Do you still want to stop ?\n then provide material \nif you want to finish give 1.");
         }
 
     }

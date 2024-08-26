@@ -1,5 +1,7 @@
 package creational.singleton;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.time.Instant;
 import java.util.concurrent.CountDownLatch;
 
@@ -17,14 +19,33 @@ public class TestSingletonPattern extends Thread {
 
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         //intializeLazySingleton();
 
       //  simpleSingletonTesting();
     	
     	
-    		
-        multipleThreadsAccessingSingleton();
+
+        //multipleThreadsAccessingSingleton();
+
+        //Thread.sleep(500);
+
+        //breaking singleton using reflection
+
+        Constructor<ThreadSafeSingleton> constructor = ThreadSafeSingleton.class.getDeclaredConstructor();
+
+        // Set the constructor accessible to bypass the private modifier
+        constructor.setAccessible(true);
+
+        // Create a new instance using the constructor
+        ThreadSafeSingleton newInstance = constructor.newInstance();
+
+        // Output the hash codes to show different instances
+        System.out.println("Instance One: " + ThreadSafeSingleton.getInstance().hashCode());
+        System.out.println("Instance Two: " + newInstance.hashCode());
+
+        //we can avoid reflection by using enum singleton or using static boolean flag
+        //implemented in BillPughSingleton class.
     	
 
 
