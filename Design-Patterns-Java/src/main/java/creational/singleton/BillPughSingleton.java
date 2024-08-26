@@ -3,13 +3,26 @@ package creational.singleton;
 import java.io.Serializable;
 
 public class BillPughSingleton implements Serializable, Cloneable{
+
+    //setting a boolean flag to ensure singleton safety from reflection
+    private static boolean instanceCreated = false;
+
     // Private constructor to prevent instantiation
     private BillPughSingleton() {
         // Initialization code here
+
+//        if(instanceCreated){
+//            throw new RuntimeException("Instance already created : use getInstance() method");
+//        }
+//
+//        instanceCreated = true;
     }
 
     // Static inner class - inner classes are not loaded until they are referenced
-
+    /*
+    * If two threads call getInstance() at exactly the same time, the JVM ensures that the SingletonHelper class is loaded only once.
+    *  The first thread to load the class initializes INSTANCE, and any other thread trying to load it afterward will see the already initialized instance.
+    * */
     private static class SingletonHelper {
         // The Singleton instance is created only when the SingletonHelper class is loaded
 

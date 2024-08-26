@@ -14,10 +14,12 @@ public class ThreadSafeSingleton {
      */
     public static ThreadSafeSingleton getInstance(){
 
+        //Purpose: The first if statement is used to avoid the cost of synchronization if the singleton instance has already been created.
         if(threadSafeSingleton == null){
 
             synchronized (ThreadSafeSingleton.class){
 
+                // useful to check whether object is already created when 2 simultaneous threads already entered the first if statement
                 if(threadSafeSingleton == null){
                     threadSafeSingleton = new ThreadSafeSingleton();
                 }
