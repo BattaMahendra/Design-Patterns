@@ -20,26 +20,11 @@ public class CricketBat {
 	}
 	
 	
-	 public void setHandleType(String handleType) {
-			this.handleType = handleType;
-		}
-
-		public void setMaterial(String material) {
-			this.material = material;
-		}
-
-		public void setGripper(String gripper) {
-			this.gripper = gripper;
-		}
-
-
-		public void setColour(String colour) {
-			this.colour = colour;
-		}
-
-		public void setStickers(String stickers) {
-			this.stickers = stickers;
-		}
+	/*
+	* Here in main product class we are avoiding setters as they make object mutable
+	*
+	* Mutable object means , instance variables of object getting changed
+	* if we use setters then we can change the values of instance variables*/
 
 
 		@Override

@@ -7,7 +7,4 @@ public abstract class Bottle {
     protected  String material;
     public abstract void typeOfMaterial();
 
-    public void getBottle(){
-        System.out.println("here is your "+material+" bottle ");
-    }
 }

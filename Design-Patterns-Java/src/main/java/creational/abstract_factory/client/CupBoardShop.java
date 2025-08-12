@@ -14,8 +14,8 @@ public class CupBoardShop {
 
 	
 	public static void main(String[] args) {
-        System.out.println("Welcome to CupBoard shop\nplease provide the type"
-        		+ " of CupBoard you want\n1. Wood --> hard and plywood"
+        System.out.println("\n\t\t\t\t========Welcome to CupBoard shop==========\n\n\t\t\t\tplease provide the type"
+        		+ " of CupBoard you want\n\n\n1. Wood --> hard and plywood"
         		+ "\n2. Metal --> steel and aluminium \n3. Fiber ---> pvc and fiber  ");
 
         Scanner s = new Scanner(System.in);
@@ -27,19 +27,19 @@ public class CupBoardShop {
            
 			
     		case "wood": {
-    			System.out.println("give type of wood ---> hard or plywood");
+    			System.out.println("\t\t\t\tgive type of wood ---> hard or plywood");
     			String subMaterial=s.nextLine();
     			factoryProvider.createRequiredFactory(materialType).getCupBoard(subMaterial);	
     			break;
     		}
     		case "metal": {
-    			System.out.println("give type of metal ---> steel or aluminium");
+    			System.out.println("\t\t\t\tgive type of metal ---> steel or aluminium");
     			String subMaterial=s.nextLine();
     			factoryProvider.createRequiredFactory(materialType).getCupBoard(subMaterial);
     			break;
     		}
     		case "fiber": {
-    			System.out.println("give type of fiber ---> pvc or fiber");
+    			System.out.println("\t\t\t\tgive type of fiber ---> pvc or fiber");
     			String subMaterial=s.nextLine();
     			factoryProvider.createRequiredFactory(materialType).getCupBoard(subMaterial);
     			break;
@@ -50,7 +50,7 @@ public class CupBoardShop {
             }
             
             
-            System.out.println("\n\n\n\nDo you still want to stop ?\n then provide material \nif you want to finish give 1.");
+            System.out.println("\n\n\n\n\t\t\t\tDo you still want to stop ?\n then provide material \nif you want to finish give 1.");
         }
 
     }

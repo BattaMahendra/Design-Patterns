@@ -17,7 +17,7 @@ package creational.factory;
  *
  * Downsides of Factory Design pattern
  *
- * 1. Some times due to over complexity , factory class can become bloated with too many if-else
+ * 1. Sometimes due to over complexity , factory class can become bloated with too many if-else
  * 2. When the creation of object is simple , factory pattern is discouraged.
  * 3. Runtime errors: If you pass wrong type strings or configs, you only find out at runtime.
  * 4. Extra abstraction: More classes/methods to manage.
