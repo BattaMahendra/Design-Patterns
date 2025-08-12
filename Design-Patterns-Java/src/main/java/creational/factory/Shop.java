@@ -10,7 +10,7 @@ public class Shop {
         Scanner s = new Scanner(System.in);
         while(true) {
             String materialType = s.nextLine();
-            if(materialType=="1")  System.exit(0);
+            if(materialType.equals("1"))  System.exit(0);
             /**
              * here instead of directly using the bottle classed to instantiate object
              * we use BottleFactory which creates us the bottle type.
@@ -27,7 +27,7 @@ public class Shop {
             if(bottle != null){
                 bottle.typeOfMaterial();
             }
-            System.out.println("\n\n\n=====================Do you still want to stop ?\n then provide material \nif you want to finish give 1.");
+            System.out.println("\n\n\n=====================Do you still want to stop ? ========================\n then provide material \nif you want to finish give 1.");
         }
 
     }
