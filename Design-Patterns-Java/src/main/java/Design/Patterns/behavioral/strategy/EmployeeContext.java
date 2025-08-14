@@ -1,6 +1,6 @@
 package Design.Patterns.behavioral.strategy;
 
-public class Context {
+public class EmployeeContext {
 	
 	private ICheckInType checkInType;
 	
@@ -10,12 +10,17 @@ public class Context {
 	 * we just need to make sure that new strategy must implement the interface
 	 */
 	
-	public Context(ICheckInType checkInType) {
+	public EmployeeContext(ICheckInType checkInType) {
 		this.checkInType=checkInType;
 	}
 	
 	public void checkIn(String creds) {
 		checkInType.checkIn(creds);
+	}
+
+	//introducing setter to change the checkin strategy at run time
+	public void setCheckInType(ICheckInType checkInStrategy){
+		this.checkInType = checkInStrategy;
 	}
 
 	

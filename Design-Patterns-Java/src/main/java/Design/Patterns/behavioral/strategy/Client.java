@@ -5,34 +5,38 @@ public class Client {
 
     public static void main(String[] args) {
 
-    	System.out.println("\n Without using strategy pattern \n");
+    	System.out.println("\n\t\t =====================Without using strategy pattern =======================\n");
         withOutStrategy();
         
-        System.out.println("\n\n With using strategy pattern \n");
+        System.out.println("\n\n\t\t ======================== With using strategy pattern =======================\n");
         withStrategyPattern();
         
-        System.out.println("\n Without using strategy pattern and JAVA 8 \n");
+        System.out.println("\n\t\t ===========================Without using strategy pattern and JAVA 8 =======================\n");
         withStrategyAndJava8();
         	
         
     }
 
 	private static void withStrategyAndJava8() {
-		Context context1 = new Context(Context.accCard);
+		EmployeeContext context1 = new EmployeeContext(EmployeeContext.accCard);
         context1.checkIn("creds");
         
-        Context context2 = new Context(Context.wfh);
+        EmployeeContext context2 = new EmployeeContext(EmployeeContext.wfh);
         context1.checkIn("creds");
         
 	}
 
 	private static void withStrategyPattern() {
 		AccessCard accessCard = new AccessCard();
-        Context context = new Context(accessCard);
+        EmployeeContext context = new EmployeeContext(accessCard);
+        context.checkIn("creds");
+
+        //changing strategy at runtime
+        context.setCheckInType(new WFH());
         context.checkIn("creds");
         
         LanCheckIn lan = new LanCheckIn();
-        Context context2 = new Context(lan);
+        EmployeeContext context2 = new EmployeeContext(lan);
         context2.checkIn("creds");
 	}
 

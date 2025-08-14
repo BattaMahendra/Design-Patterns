@@ -7,6 +7,8 @@ package Design.Patterns.behavioral.strategy;
  * It is better to maintain interface simple which focuses on 
  * Single Responsibility principle in SOLID
  */
+
+// this is the abstract strategy
 public interface ICheckInType {
 	
 	public void checkIn(String credentials);
