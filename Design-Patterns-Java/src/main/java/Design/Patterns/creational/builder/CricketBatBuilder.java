@@ -44,7 +44,7 @@ public class CricketBatBuilder implements ICricketBatBuilder {
 	  public CricketBatBuilder HandleType(String handleType) {
 			this.handleType = handleType;
 			return this;
-		}
+	  }
 
 
 

@@ -32,12 +32,12 @@ public class PaymentProcessor {
  *  There are 2 principles
  *
  *  1.  High-level modules should depend on abstractions, not on concrete classes.
- *      ( In our example case PaymentProcessor class which is high level module depended on PaymentMethod (Abstraction)
- *      rather than CreditCardPayment ( concrete class)
+ *      [ In our example case PaymentProcessor class which is high level module depended on PaymentMethod (Abstraction)
+ *      rather than CreditCardPayment ( concrete class) ]
  *
  *  2. Abstractions should not depend on details; details should depend on abstractions.
- *      (In our case PaymentMethod(Abstraction) didn't depend on CreditCardPayment(detailed subclass)
- *      Rather, PaymentMethod(Abstraction) defined a way how details ( CreditCardPayment, UPI Payment) should work)
+ *      [In our case PaymentMethod(Abstraction) didn't depend on CreditCardPayment(detailed subclass)
+ *      Rather, PaymentMethod(Abstraction) defined a way how details ( CreditCardPayment, UPI Payment) should work]
  *
  *  */
 

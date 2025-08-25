@@ -3,7 +3,18 @@ package Design.Patterns.behavioral.Observer;
 import Design.Patterns.behavioral.Observer.Subject.Channel;
 
 import java.sql.SQLOutput;
-
+/**
+ *
+ * The Observer Pattern defines a one-to-many dependency between objects so that when one object changes state,
+ * all its dependents (observers) are notified automatically.
+ * Subject no need to know about its observers independently(so Observer interface helps here)
+ *
+ * Benefits
+ *
+ * Loose coupling → Subject doesn’t know details of observers, just that they implement Observer.
+ * Open/Closed Principle → New observers can be added without changing Subject.
+ * Flexibility → Observers can be attached/detached at runtime.
+ * */
 public class Test {
 
     public static void main(String[] args) {

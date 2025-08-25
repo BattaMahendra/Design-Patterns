@@ -1,7 +1,11 @@
 package Design.Patterns.behavioral.strategy;
 
 public class EmployeeContext {
-	
+
+	/*
+		The main goal of strategy pattern - to change the behaviour of object at runtime
+	* A context class uses a reference to the strategy interface,
+	*  and you can swap the strategy object at runtime.*/
 	private ICheckInType checkInType;
 	
 	/*

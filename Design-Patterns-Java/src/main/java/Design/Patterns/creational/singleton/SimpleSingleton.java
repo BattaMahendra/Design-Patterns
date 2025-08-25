@@ -25,7 +25,7 @@ public class SimpleSingleton {
 
 }
 
-
+// Goal of singleton design pattern
 // our class should let us create only one obj
 // and that should be used everywhere
 

@@ -8,6 +8,7 @@ public  class FiberCupBoardFactory implements CupBoardFactory {
 
 	@Override
 	public CupBoard getCupBoard(String materialType) {
+
 		switch(materialType.toLowerCase()){
 		
 		case "pvc": return new PvcCupBoard();
@@ -15,5 +16,5 @@ public  class FiberCupBoardFactory implements CupBoardFactory {
 		default: {System.out.println("invalid material"); return null;}
 		}
 
-}
+	}
 }

@@ -2,7 +2,16 @@ package Design.Patterns.creational.factory;
 
 import java.util.Scanner;
 
-public class Shop {
+/**
+ * The Factory Design Pattern is about creating objects without exposing the object creation logic to the client.
+ * Instead of using new directly in client code, you delegate the object creation to a separate factory class or method.
+ *
+ * 👉 In short:
+ * Without Factory: Client code decides what object to create → tightly coupled.
+ * With Factory: Client code just asks factory for an object → loosely coupled, flexible.*/
+
+public class
+Shop {
 
     public static void main(String[] args) {
         System.out.println("Welcome to Bottle shop\nplease provide the type of bottle you want\n1. steel\n2. plastic \n3. mud ");

@@ -41,3 +41,7 @@ public class BottleFactory {
         return null;
     }
 }
+
+/*
+* If you closely observe the method getBottle(String) violates open closed principle
+* for simplicity I have done this , you should not do like this*/

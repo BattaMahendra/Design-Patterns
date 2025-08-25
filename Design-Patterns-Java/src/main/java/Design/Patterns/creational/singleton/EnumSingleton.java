@@ -15,7 +15,7 @@ package Design.Patterns.creational.singleton;
 *
 * So when does Bill pugh singleton used compared to enum singleton
 *
-* 1. when you want proper lazy initializtion (more flexibility in defining methods)
+* 1. when you want proper lazy initialization (more flexibility in defining methods)
 * 2. Enums can't extend any other classes. But Bill Pugh can do (in that case it is better than enum )
 * 3. More functionality ( you can have as many as methods and variables compared to enums)
 *
