@@ -24,7 +24,7 @@ public class BillPughSingleton implements Serializable, Cloneable{
         /*
         * Here is the lock and check mechanism to avoid reflection in Bill pugh singleton*/
         if(instanceCreated){
-            throw new RuntimeException("Instance already created : use getInstance() method");
+            throw new RuntimeException("Instance already created : use getInstance() method for object");
         }
 
         // flag is set true once the object is created
@@ -44,6 +44,8 @@ public class BillPughSingleton implements Serializable, Cloneable{
 
     // Public method to provide access to the instance
     public static BillPughSingleton getInstance() {
+
+        System.out.println("Creating the Singleton Instance");
         return SingletonHelper.INSTANCE;
     }
 
@@ -55,6 +57,8 @@ public class BillPughSingleton implements Serializable, Cloneable{
    * To overcome this we use readResolve() method and we customize the returned object in the method
    * If we provide readResolve() method then JVM takes the returned instance from the method and avoids creating
    * new instance
+   *
+   * You can practically test it by executing following method from main method
    * */
     protected Object readResolve() {
 
@@ -62,10 +66,17 @@ public class BillPughSingleton implements Serializable, Cloneable{
         return getInstance();
     }
 
+    /**
+     * Cloneable is a marker interface which signals JVM to enable cloning for class it implemented
+     * So the Object class contains clone() method which is used to create copies of objects of class
+     * Here the clone() method creates object from direct JVM and bypasses constructor totally.
+     * */
+
     //avoid cloning of this class
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        throw new CloneNotSupportedException("Cloning of this object is not allowed");
+        throw new CloneNotSupportedException("Cloning of this object is not allowed"); // you can either prevent cloning
+        //return getInstance();   // you can also return the same singleton object which bypasses cloning from JVM
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
@@ -98,7 +109,8 @@ public class BillPughSingleton implements Serializable, Cloneable{
 
         // Exception will be thrown if we use mechanism
         System.out.println(" Hash code of instance 1 :"+ getInstance().hashCode());
-        System.out.println(" Hash code of instance 1 :"+ instance2.hashCode());
+        System.out.println(" Hash code of instance 2 :"+ instance2.hashCode());
+
 
     }
 
@@ -109,8 +121,9 @@ public class BillPughSingleton implements Serializable, Cloneable{
 
         The JVM guarantees that a class is loaded only once and that the static fields are initialized when the class is loaded.
         The SingletonHelper class is not loaded until it is referenced by the getInstance() method. This ensures that the Singleton instance (SingletonHelper.INSTANCE) is created only when the getInstance() method is first called.
-*
-      Thread Safety:
+
+    * Thread Safety:
+
         When multiple threads access the getInstance() method simultaneously, the JVM ensures that the static initialization of the SingletonHelper class is done in a thread-safe manner.
         *  This means that even if two threads access getInstance() at the exact same time, the JVM ensures that the SingletonHelper class is loaded only once, and thus, the Singleton instance is created only once.
         The JVM's class loader mechanism provides the necessary synchronization to make this operation thread-safe without requiring explicit synchronization in the code.

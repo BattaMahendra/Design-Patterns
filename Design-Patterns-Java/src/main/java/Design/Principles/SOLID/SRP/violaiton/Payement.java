@@ -3,7 +3,7 @@ package Design.Principles.SOLID.SRP.violaiton;
 
 /**
  *
- * Single Responsibility Principle - A unit should sole and single responsibility
+ * Single Responsibility Principle - A unit should have a sole and single responsibility
  *
  * Here we are using Payment class for both pay() and refund() which is violating SRP */
 public class Payement {

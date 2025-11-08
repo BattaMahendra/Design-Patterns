@@ -34,8 +34,8 @@ public class SimpleSingleton {
 /*
 * The basic Singleton implementation provided has several drawbacks, particularly in multi-threaded environments. Here are some of the main issues:
 
-1. Thread Safety:
-Problem: The provided Singleton implementation is not thread-safe. If two threads call getInstance() simultaneously when the instance is null, both could create separate instances, violating the Singleton principle.
+1. Thread Safety: (The above class is thread safe)
+Problem: (In case of basic lazy singleton) The provided Singleton implementation is not thread-safe. If two threads call getInstance() simultaneously when the instance is null, both could create separate instances, violating the Singleton principle.
 Solution: Use synchronized blocks or other thread-safe mechanisms to ensure only one thread can create the instance.
 *
 2. Performance:
