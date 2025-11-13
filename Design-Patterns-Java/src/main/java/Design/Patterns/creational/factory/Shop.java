@@ -8,7 +8,8 @@ import java.util.Scanner;
  *
  * 👉 In short:
  * Without Factory: Client code decides what object to create → tightly coupled.
- * With Factory: Client code just asks factory for an object → loosely coupled, flexible.*/
+ * With Factory: Client code just asks factory for an object → loosely coupled, flexible.
+ * */
 
 public class
 Shop {
@@ -34,7 +35,7 @@ Shop {
             Bottle bottle = factory.getBottle(materialType);
             //using if block in order to avoid null pointer exception when null is returned from above line
             if(bottle != null){
-                bottle.typeOfMaterial();
+                bottle.createBottle();
             }
             System.out.println("\n\n\n=====================Do you still want to stop ? ========================\n then provide material \nif you want to finish give 1.");
         }

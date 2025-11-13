@@ -45,4 +45,8 @@ public class Channel implements ChannelInterface {
          observers.forEach(observer -> observer.notify(this, message));
      }
 
+     /*
+     * Take care of exceptions in observers notify method as if one observer gets exception then others also
+     * will stop receiving*/
+
 }

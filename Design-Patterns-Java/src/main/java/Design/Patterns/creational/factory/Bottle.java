@@ -5,6 +5,6 @@ public abstract class Bottle {
      * we can't instantiate abstract class
      * */
     protected  String material;
-    public abstract void typeOfMaterial();
+    public abstract void createBottle();
 
 }

@@ -8,7 +8,7 @@ package Design.Patterns.creational.singleton;
 * 1. Avoids Deserialization issues ( special serialization and deserialization in case of enums)
 * 2. Avoids multi threading issues ( instance is created at the time of class loading)
 * 3. NO Reflection issues ( JVM forbids reflection in enums)
-* 4. less boiler plate code
+* 4. Less boilerplate code
 * 5. Clone safe ( we can't create new instance by cloning in enum)
 *   JVM forbids cloning in enum , if you do u will get clone not supported exception
 * 6. Enum instance is created only when the enum is referenced. (Although it is still eager initialization in context of class)

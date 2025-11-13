@@ -19,7 +19,7 @@ public class CricketBatBuilder implements ICricketBatBuilder {
 	
 
 	// mandatory fields for creating a cricket bat
-	  String handleType;
+    String handleType;
 	  String material;
 
 	  // optional fields
