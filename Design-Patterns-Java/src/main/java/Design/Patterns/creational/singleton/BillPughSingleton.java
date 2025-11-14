@@ -120,12 +120,13 @@ public class BillPughSingleton implements Serializable, Cloneable{
     * Class Loading:
 
         The JVM guarantees that a class is loaded only once and that the static fields are initialized when the class is loaded.
-        The SingletonHelper class is not loaded until it is referenced by the getInstance() method. This ensures that the Singleton instance (SingletonHelper.INSTANCE) is created only when the getInstance() method is first called.
+        The SingletonHelper class is not loaded until it is referenced by the getInstance() method.
+        This ensures that the Singleton instance (SingletonHelper.INSTANCE) is created only when the getInstance() method is first called.
 
     * Thread Safety:
 
         When multiple threads access the getInstance() method simultaneously, the JVM ensures that the static initialization of the SingletonHelper class is done in a thread-safe manner.
-        *  This means that even if two threads access getInstance() at the exact same time, the JVM ensures that the SingletonHelper class is loaded only once, and thus, the Singleton instance is created only once.
+        This means that even if two threads access getInstance() at the exact same time, the JVM ensures that the SingletonHelper class is loaded only once, and thus, the Singleton instance is created only once.
         The JVM's class loader mechanism provides the necessary synchronization to make this operation thread-safe without requiring explicit synchronization in the code.
 *
 * */

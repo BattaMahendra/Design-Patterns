@@ -9,7 +9,7 @@ package Design.Patterns.structural;
 
 /**
 *Structural design pattern is a blueprint of how different objects and classes are 
-*combined together to form a bigger structure for achieving multiple goals altogether.
+*combined/assembled together to form a bigger structure for achieving multiple goals altogether.
  *
 * The patterns in Design.Patterns.structural designs show how unique pieces of a system can be combined
 * together in an extensible and flexible manner.
