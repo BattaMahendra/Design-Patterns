@@ -9,7 +9,7 @@ import java.util.List;
  * @author batta.chowdary
  *
  */
-public class DeveloperAccessProxy implements IOdcAccess{
+public class DeveloperAccessProxy implements ODC_Access {
 
 	private ManagerAccess originalAccess;
 	private List<String> roomsList = Arrays.asList("testing-lab","AI-lab","ML-lab");

@@ -6,7 +6,7 @@ package Design.Patterns.structural.proxy;
  * @author batta.chowdary
  *
  */
-public class ManagerAccess implements IOdcAccess {
+public class ManagerAccess implements ODC_Access {
 
 	@Override
 	public void grantAccess(String rooms) {
