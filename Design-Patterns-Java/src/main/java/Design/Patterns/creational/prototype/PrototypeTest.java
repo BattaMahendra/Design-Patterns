@@ -22,6 +22,10 @@ public class PrototypeTest {
                     return c1.copy();
                 })
                 .collect(Collectors.toList());
+
+        laptopList.forEach(l -> {
+            System.out.println(l.hashCode());
+        });
     }
 }
 
