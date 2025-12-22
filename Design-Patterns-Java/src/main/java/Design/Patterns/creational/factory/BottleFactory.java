@@ -4,11 +4,11 @@ package Design.Patterns.creational.factory;
 
 /**
  * When to use Factory design pattern
- * 1. When a parent have multiple sub classes.
+ * 1. When a parent have multiple subclasses.
  * 2. Using this we can promote loose coupling by differentiating object creation from clients
  * 3. Factory class will take care of the object creation.
  * 4. Client doesn't need to change anything if some changes occur in object creation
- * 5. Client doesn't need to know nitty gritty details of object creation. It just tells type of object it needs.
+ * 5. Client doesn't need to know nitty-gritty details of object creation. It just tells type of object it needs.
  *
  * Simply you can use it when
  * 1. Object creation is very complex (so that we can maintain creation at one place - single responsibility principle)

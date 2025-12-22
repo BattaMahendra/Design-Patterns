@@ -6,11 +6,18 @@ package Design.Patterns.creational.singleton;
 *
 * Advantages
 * 1. Avoids Deserialization issues ( special serialization and deserialization in case of enums)
+*       For enums:
+            • JVM does NOT deserialize a new object
+            • It does a lookup by enum name ==> eadObject → Enum.valueOf(EnumClass, "INSTANCE_CONSTANT")
 * 2. Avoids multi threading issues ( instance is created at the time of class loading)
 * 3. NO Reflection issues ( JVM forbids reflection in enums)
+            • Enum constructors are implicitly private
+            • JVM adds a hard check: “Enum instances can only be created by the JVM itself”
 * 4. Less boilerplate code
 * 5. Clone safe ( we can't create new instance by cloning in enum)
-*   JVM forbids cloning in enum , if you do u will get clone not supported exception
+*       • Enums do not implement Cloneable
+        • clone() is final in Enum
+        • JVM throws exception if cloning is attempted
 * 6. Enum instance is created only when the enum is referenced. (Although it is still eager initialization in context of class)
 *
 * So when does Bill pugh singleton used compared to enum singleton

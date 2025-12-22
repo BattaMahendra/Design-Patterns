@@ -14,6 +14,6 @@ public class PaymentProcessor {
         } else if (type.equals("upi")) {
             // upi logic
         }
-        // need to add another else if statement if some new payment method comes up.
+        // need to add another else-if statement if some new payment method comes up.
     }
 }

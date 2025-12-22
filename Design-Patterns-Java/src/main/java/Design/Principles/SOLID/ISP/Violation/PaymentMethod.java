@@ -20,5 +20,6 @@ public interface PaymentMethod {
  *
  * Practical tip:
  * If you ever find yourself putting dummy return null; or empty {} bodies in a method
- * just to satisfy an interface, you might be violating ISP.*/
+ * just to satisfy an interface, you might be violating ISP.
+ **/
 

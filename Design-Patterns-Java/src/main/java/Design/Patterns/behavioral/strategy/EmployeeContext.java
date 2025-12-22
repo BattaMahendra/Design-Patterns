@@ -22,7 +22,7 @@ public class EmployeeContext {
 		checkInType.checkIn(creds);
 	}
 
-	//introducing setter to change the checkin strategy at run time
+	//introducing setter to change the checkIn strategy at run time
 	public void setCheckInType(ICheckInType checkInStrategy){
 		this.checkInType = checkInStrategy;
 	}
