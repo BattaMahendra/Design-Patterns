@@ -3,6 +3,9 @@ package Design.Patterns.behavioral.template;
 public abstract class PaymentProcessor {
 
 
+    /*
+    * Defines the order and it can't be overridden
+    * */
     public final void process(){
         validate();
         execute();;
