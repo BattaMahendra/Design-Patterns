@@ -1,0 +1,20 @@
+
+
+It is used so many places in spring boot applications.
+
+Many of the places it is used as wrapper.
+
+Eg:
+InputStream in =
+    new DataInputStream(
+        new BufferedInputStream(
+            new FileInputStream("file.txt")));
+
+2. List<String> list = new ArrayList<>();
+
+   List<String> syncList =
+       Collections.synchronizedList(list);
+
+   Collections.unmodifiableList(list);
+   Collections.checkedList(list);
+

@@ -1,0 +1,7 @@
+
+Generally used in Kafka
+
+@KafkaListener(topics = "orders")
+public void consume(String message) {
+    System.out.println(message);
+}

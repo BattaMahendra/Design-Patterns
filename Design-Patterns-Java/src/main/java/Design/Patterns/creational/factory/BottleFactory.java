@@ -14,6 +14,7 @@ package Design.Patterns.creational.factory;
  * 1. Object creation is very complex (so that we can maintain creation at one place - single responsibility principle)
  * 2. When you know the objects will have many changes in the future. So the client is not effected.
  * 3. If you want to hide the object creation logic from clients.
+ * 4. This pattern is particularly useful when the exact type of object to create isn’t known until runtime.
  *
  * Downsides of Factory Design pattern
  *

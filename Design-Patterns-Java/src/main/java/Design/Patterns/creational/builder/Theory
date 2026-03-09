@@ -1,0 +1,26 @@
+
+Builder design pattern is widely used in many of the java and spring boot libraries
+
+String result = new StringBuilder()
+        .append("Hello ")
+        .append("World")
+        .toString();
+
+
+String uri = UriComponentsBuilder
+        .fromUriString("https://api.example.com")
+        .path("/users")
+        .queryParam("id", 10)
+        .build()
+        .toUriString();
+
+
+RestTemplate restTemplate = new RestTemplateBuilder()
+        .setConnectTimeout(Duration.ofSeconds(5))
+        .setReadTimeout(Duration.ofSeconds(5))
+        .build();
+
+WebClient client = WebClient.builder()
+        .baseUrl("https://api.example.com")
+        .defaultHeader("Authorization", "Bearer token")
+        .build();

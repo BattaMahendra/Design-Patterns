@@ -14,6 +14,7 @@ public interface PaymentMethod {
     }
 
     public void refund() {
+
         throw new UnsupportedOperationException("Refund not supported for cash payments");
     }
 }

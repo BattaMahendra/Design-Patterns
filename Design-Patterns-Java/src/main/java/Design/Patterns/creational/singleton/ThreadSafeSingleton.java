@@ -30,7 +30,7 @@ public class ThreadSafeSingleton {
     }
 
     /**
-     * this method is accessible by only thread but it is resource intensive as we are using synchronised keyword
+     * this method is accessible by only thread, but it is resource intensive as we are using synchronised keyword on method
      */
     public static synchronized ThreadSafeSingleton getInstance2(){
 

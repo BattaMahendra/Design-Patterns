@@ -14,12 +14,12 @@ public class DeveloperAccessProxy implements ODC_Access {
 	private ManagerAccess originalAccess;
 	private List<String> roomsList = Arrays.asList("testing-lab","AI-lab","ML-lab");
 	@Override
-	public void grantAccess(String rooms) {
+	public void grantAccess(String room) {
 		originalAccess= new ManagerAccess();
-		if(roomsList.contains(rooms)) {
+		if(roomsList.contains(room)) {
 			System.out.println("you don't have access to this rooms");
 		}
-		else originalAccess.grantAccess(rooms);
+		else originalAccess.grantAccess(room);
 		
 	}
 	

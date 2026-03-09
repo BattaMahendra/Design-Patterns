@@ -1,0 +1,13 @@
+
+
+Strategy design pattern is generally used to avoid open closed principle violation and injection of different strategy at runtime.
+
+// It is famously used in sort() method
+
+List<String> list = List.of("Mahendra", "Ram", "Krishna");
+
+list.stream()
+    .sorted((a, b) -> a.length() - b.length())  // here the comparator is the different strategy which can be passed
+    .toList();
+
+also in Collections.sort(list, ageComparator);

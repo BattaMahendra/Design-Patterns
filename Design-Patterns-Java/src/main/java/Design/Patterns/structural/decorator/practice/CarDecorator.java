@@ -5,7 +5,7 @@ public abstract class CarDecorator implements Car {
     public Car car;
 
    public CarDecorator(Car car){
-       this.car = car;
+        this.car = car;
    }
 
     @Override

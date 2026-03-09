@@ -6,5 +6,8 @@ public class Test {
 
         UPIPayment upiPayment = new UPIPayment();
         upiPayment.process();
+
+        CreditCardPayment creditCardPayment = new CreditCardPayment();
+        creditCardPayment.process();
     }
 }

@@ -46,7 +46,7 @@ public class Channel implements ChannelInterface {
      }
 
      /*
-     * Take care of exceptions in observers notify method as if one observer gets exception then others also
+     * Take care of exceptions in observers notify() method as if one observer gets exception then others following also
      * will stop receiving*/
 
 }

@@ -1,0 +1,30 @@
+
+Generally Singleton dp is widely used in java and spring boot
+
+Spring Framework: Default Bean Scope
+    This is the "bread and butter" of Spring Boot. In Spring, the default scope for any Bean you create is Singleton.
+
+    The Usage: When you annotate a class with @Service, @Repository, or @Component, Spring creates exactly one instance of that class per application context.
+
+    The Benefit: If 50 different classes need to use your UserService, Spring doesn't create 50 objects.
+                 It creates one and "injects" that same instance everywhere. This saves a massive amount of memory.
+
+
+@Bean
+public CacheManager cacheManager() {
+    return new ConcurrentMapCacheManager();
+}
+
+Bean default scope is singleton only.
+@Service
+public class UserService {}
+
+
+When Spring starts:
+
+    creates one instance
+    stores in IOC container
+    every @Autowired gets same object
+
+    @Autowired
+    private UserService service;

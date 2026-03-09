@@ -1,0 +1,23 @@
+
+This pattern is particularly useful when the exact type of
+object to create isn’t known until runtime.
+
+
+Famously used in following ways in java and spring boot
+
+
+
+ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+MyService service = ctx.getBean(MyService.class);
+
+Connection con = DriverManager.getConnection(url);
+
+
+Optional<String> opt = Optional.of("hello");
+
+
+List<String> list = List.of("A", "B", "C");
+Set<Integer> set = Set.of(1, 2, 3);
+
+
+Integer i = Integer.valueOf(10);

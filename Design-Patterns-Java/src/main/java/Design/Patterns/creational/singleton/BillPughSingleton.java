@@ -60,7 +60,7 @@ public class BillPughSingleton implements Serializable, Cloneable{
    *
    * You can practically test it by executing following method from main method
    * */
-    protected Object readResolve() {
+    public Object readResolve() {
 
         // here for the singleton use case we are returning the same instance
         return getInstance();

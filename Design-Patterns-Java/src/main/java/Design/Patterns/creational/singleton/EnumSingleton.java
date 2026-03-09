@@ -8,7 +8,7 @@ package Design.Patterns.creational.singleton;
 * 1. Avoids Deserialization issues ( special serialization and deserialization in case of enums)
 *       For enums:
             • JVM does NOT deserialize a new object
-            • It does a lookup by enum name ==> eadObject → Enum.valueOf(EnumClass, "INSTANCE_CONSTANT")
+            • It does a lookup by enum name ==> readObject → Enum.valueOf(EnumClass, "INSTANCE_CONSTANT")
 * 2. Avoids multi threading issues ( instance is created at the time of class loading)
 * 3. NO Reflection issues ( JVM forbids reflection in enums)
             • Enum constructors are implicitly private

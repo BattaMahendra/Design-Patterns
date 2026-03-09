@@ -21,7 +21,9 @@ public class CricketBat {
 	
 	
 	/*
-	* Here in main product class we are avoiding setters as they make object mutable
+	* Here in main product class we are avoiding setters as they make object mutable. There is no problem with mutable object. you can do that also.
+	*
+	* Generally Immutability + builder goes very well. Immutable classes are initialized at starting only and builder is a good way to do it.
 	*
 	* Mutable object means , instance variables of object getting changed
 	* if we use setters then we can change the values of instance variables*/
