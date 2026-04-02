@@ -23,4 +23,5 @@ package Design.Principles.SOLID.OCP.principle;
 /**
  * Open Closed Principle
  *
- * Classes should be open for extension but closed for modification.*/
+ * Classes should be open for extension but closed for modification.
+ * */

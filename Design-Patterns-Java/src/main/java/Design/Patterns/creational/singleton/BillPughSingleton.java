@@ -2,6 +2,7 @@ package Design.Patterns.creational.singleton;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
 // Unlike enum singleton here we have flexibility to extend any other class
@@ -36,14 +37,14 @@ public class BillPughSingleton implements Serializable, Cloneable{
     * If two threads call getInstance() at exactly the same time, the JVM ensures that the SingletonHelper class is loaded only once.
     *  The first thread to load the class initializes INSTANCE, and any other thread trying to load it afterward will see the already initialized instance.
     * */
-    private static class SingletonHelper {
+    private static final class SingletonHelper {
         // The Singleton instance is created only when the SingletonHelper class is loaded
 
         private static final BillPughSingleton INSTANCE = new BillPughSingleton();
     }
 
     // Public method to provide access to the instance
-    public static BillPughSingleton getInstance() {
+    public static final BillPughSingleton getInstance() {
 
         System.out.println("Creating the Singleton Instance");
         return SingletonHelper.INSTANCE;
@@ -79,10 +80,10 @@ public class BillPughSingleton implements Serializable, Cloneable{
         //return getInstance();   // you can also return the same singleton object which bypasses cloning from JVM
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, NoSuchFieldException {
 
         //serialize
-        FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\batta\\OneDrive\\Documents\\Projects\\SampleProjects\\Design-Patterns\\Design-Patterns-Java\\src\\main\\resources\\serialized-objects.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\batta\\IdeaProjects\\SampleProjects\\Design-Patterns\\Design-Patterns-Java\\src\\main\\resources\\serialized-objects.txt");
         ObjectOutputStream out = new ObjectOutputStream(fileOutputStream);
 
         out.writeObject(getInstance());
@@ -91,7 +92,7 @@ public class BillPughSingleton implements Serializable, Cloneable{
         System.out.println("Hash code of serialized object: "+ getInstance().hashCode());
 
         //deserialize
-        FileInputStream fin = new FileInputStream("C:\\Users\\batta\\OneDrive\\Documents\\Projects\\SampleProjects\\Design-Patterns\\Design-Patterns-Java\\src\\main\\resources\\serialized-objects.txt");
+        FileInputStream fin = new FileInputStream("C:\\Users\\batta\\IdeaProjects\\SampleProjects\\Design-Patterns\\Design-Patterns-Java\\src\\main\\resources\\serialized-objects.txt");
         ObjectInputStream Oin = new ObjectInputStream(fin);
         BillPughSingleton object = (BillPughSingleton) Oin.readObject();
         System.out.println("Deserialized object hashcode : "+ object.hashCode());
@@ -104,12 +105,22 @@ public class BillPughSingleton implements Serializable, Cloneable{
         Constructor<BillPughSingleton> con = BillPughSingleton.class.getDeclaredConstructor();
         con.setAccessible(true);
 
+
+        Field field = BillPughSingleton.class.getDeclaredField("instanceCreated");
+        field.setAccessible(true); // breaking private field to accessible
+        field.set(null,false);  // setting instanceCreated field to false again
+
+
         //Creating new object using reflection
         BillPughSingleton instance2 = con.newInstance();
+
 
         // Exception will be thrown if we use mechanism
         System.out.println(" Hash code of instance 1 :"+ getInstance().hashCode());
         System.out.println(" Hash code of instance 2 :"+ instance2.hashCode());
+
+        /*
+        * So the best solution is to Use Enum Singleton*/
 
 
     }

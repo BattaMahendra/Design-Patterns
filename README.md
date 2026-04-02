@@ -37,21 +37,21 @@ Here's a quick look at the topics covered:
 ### 🎨 Design Patterns
 
 #### 🏗️ Creational Patterns
-*   Abstract Factory
-*   Builder
-*   Factory
-*   Prototype
-*   Singleton
+*   **Abstract Factory**: Solves the problem of creating families of related or dependent objects without specifying their concrete classes.
+*   **Builder**: Solves the problem of constructing complex objects step by step, allowing the same construction process to create different representations.
+*   **Factory**: Solves the problem of creating objects without specifying the exact class of object that will be created, delegating the instantiation to subclasses.
+*   **Prototype**: Solves the problem of creating new objects by copying existing ones, which is useful when the cost of creating a new object from scratch is more expensive than copying an existing one.
+*   **Singleton**: Solves the problem of ensuring that a class has only one instance, while providing a global point of access to this instance.
 
 #### 🏛️ Structural Patterns
-*   Adapter
-*   Decorator
-*   Proxy
+*   **Adapter**: Solves the problem of incompatible interfaces by allowing classes with incompatible interfaces to work together by wrapping an existing class with a new interface.
+*   **Decorator**: Solves the problem of adding new responsibilities to objects dynamically without affecting other objects of the same class, providing a flexible alternative to subclassing.
+*   **Proxy**: Solves the problem of controlling access to an object, such as delaying its creation until it's actually needed (virtual proxy), controlling access rights (protection proxy), or providing a local representative for an object in a different address space (remote proxy).
 
 #### 🏃‍♀️ Behavioral Patterns
-*   Observer
-*   Strategy
-*   Template
+*   **Observer**: Solves the problem of defining a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+*   **Strategy**: Solves the problem of defining a family of algorithms, encapsulating each one, and making them interchangeable. It lets the algorithm vary independently from clients that use it.
+*   **Template**: Solves the problem of defining the skeleton of an algorithm in an operation, deferring some steps to subclasses. It lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 
 ## 🚀 How to Use
 
@@ -61,7 +61,7 @@ Here's a quick look at the topics covered:
 
 You can also build the project using Gradle:
 ```bash
-./gradlew build
+.\gradlew build
 ```
 
 ## 📈 Architectural Diagrams

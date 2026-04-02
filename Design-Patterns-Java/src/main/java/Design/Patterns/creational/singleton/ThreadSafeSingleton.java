@@ -2,7 +2,7 @@ package Design.Patterns.creational.singleton;
 
 public class ThreadSafeSingleton {
     
-    private static ThreadSafeSingleton threadSafeSingleton = null;
+    private static  ThreadSafeSingleton threadSafeSingleton = null;
     
     private ThreadSafeSingleton(){
         
